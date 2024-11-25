@@ -1,9 +1,75 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --primary-color: #0073e6;
+    --button-hover: #005bb5;
+}
+
+/* Define themes */
+[data-theme="theme1"] {
+    --primary-color: #0073e6;
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --button-hover: #005bb5;
+}
+
+[data-theme="theme2"] {
+    --primary-color: #e63946;
+    --bg-color: #fefae0;
+    --text-color: #1d3557;
+    --button-hover: #d62839;
+}
+
+[data-theme="theme3"] {
+    --primary-color: #2a9d8f;
+    --bg-color: #fef9ef;
+    --text-color: #264653;
+    --button-hover: #21867a;
+}
+
+[data-theme="theme4"] {
+    --primary-color: #f4a261;
+    --bg-color: #ffebe5;
+    --text-color: #3a3a3a;
+    --button-hover: #e76f51;
+}
+
+[data-theme="theme5"] {
+    --primary-color: #8a2be2;
+    --bg-color: #f7f0fa;
+    --text-color: #1b1b3a;
+    --button-hover: #6a0dad;
+}
+
+/* Dark mode overlay */
+[data-dark-mode="true"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+}
+
+/* Apply variables */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f9;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+
+    border: none;
+    padding: 0.7em 1.5em;
+    margin: 0.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    width: 200px; /* Set a fixed width for all buttons */
+    text-align: center;
+    font-size: 1em; /* Ensures consistent text size */
+}
+
+button:hover {
+    background-color: var(--button-hover);
 }
 
 .header {
@@ -66,10 +132,6 @@ button {
     width: 200px; /* Set a fixed width for all buttons */
     text-align: center;
     font-size: 1em; /* Ensures consistent text size */
-}
-
-button:hover {
-    background: #005bb5;
 }
 
 .footer {
