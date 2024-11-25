@@ -2,78 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IT Class Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty College IT Class</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Light/Dark Mode Toggle -->
-    <input type="checkbox" id="mode-toggle">
-    <label for="mode-toggle" class="mode-label">
-        <div class="toggle-ball"></div>
-    </label>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Liberty IT Class</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#syllabus">Syllabus</a></li>
+            <li><a href="#assignments">Assignments</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Wrap the content in a div for styling purposes -->
-    <div class="content">
-        <!-- Header -->
-        <header>
-            <h1>Welcome to the IT Class</h1>
-        </header>
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <h1>Welcome to Liberty College IT Class</h1>
+        <p>Your journey into the world of Information Technology starts here.</p>
+    </section>
 
-        <!-- Navigation Menu -->
-        <nav>
-            <ul>
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#courses" class="nav-link">Courses</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About the Course</h2>
+        <p>This course covers the fundamentals of Information Technology, including programming, networking, and cybersecurity.</p>
+    </section>
 
-        <!-- Main Content -->
-        <main>
-            <!-- Home Section -->
-            <section id="home" class="content-section">
-                <h2>About Our IT Class</h2>
-                <p>Join us to explore the exciting world of Information Technology. From basic computer skills to advanced programming, we offer a range of courses to suit your interests.</p>
-                <a href="#courses" class="button">View Courses</a>
-            </section>
+    <!-- Syllabus Section -->
+    <section id="syllabus" class="syllabus-section">
+        <h2>Syllabus</h2>
+        <ul>
+            <li>Introduction to IT</li>
+            <li>Basic Programming Concepts</li>
+            <li>Networking Fundamentals</li>
+            <li>Database Management</li>
+            <li>Cybersecurity Essentials</li>
+        </ul>
+    </section>
 
-            <!-- Courses Section -->
-            <section id="courses" class="content-section">
-                <h2>Our Courses</h2>
-                <div class="card-container">
-                    <!-- Course 1 -->
-                    <div class="card">
-                        <h3>Introduction to Programming</h3>
-                        <p>Learn the fundamentals of programming using Python.</p>
-                        <a href="#" class="button">Learn More</a>
-                    </div>
-                    <!-- Course 2 -->
-                    <div class="card">
-                        <h3>Web Development</h3>
-                        <p>Build modern websites using HTML and CSS.</p>
-                        <a href="#" class="button">Learn More</a>
-                    </div>
-                    <!-- Course 3 -->
-                    <div class="card">
-                        <h3>Networking Basics</h3>
-                        <p>Understand the principles of computer networking.</p>
-                        <a href="#" class="button">Learn More</a>
-                    </div>
-                </div>
-            </section>
+    <!-- Assignments Section -->
+    <section id="assignments" class="assignments-section">
+        <h2>Assignments</h2>
+        <ol>
+            <li>Setup Your Development Environment</li>
+            <li>Build a Simple Website</li>
+            <li>Networking Basics Project</li>
+            <li>Database Design Assignment</li>
+            <li>Cybersecurity Case Study</li>
+        </ol>
+    </section>
 
-            <!-- Contact Section -->
-            <section id="contact" class="content-section">
-                <h2>Contact Us</h2>
-                <p>Have questions? We'd love to hear from you!</p>
-                <a href="mailto:itclass@example.com" class="button">Email Us</a>
-            </section>
-        </main>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <p>If you have any questions, feel free to reach out to the instructor at <a href="mailto:instructor@libertycollege.edu">instructor@libertycollege.edu</a>.</p>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2023 IT Class. All Rights Reserved.</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Liberty College IT Class. All rights reserved.</p>
+    </footer>
 </body>
 </html>
