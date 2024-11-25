@@ -1,221 +1,99 @@
-/* CSS Variables for Light and Dark Modes */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
-    --card-bg-color: #f8f9fa;
-    --nav-bg-color: #343a40;
-    --nav-text-color: #ffffff;
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Light/Dark Mode Toggle Styling */
-#mode-toggle {
-    display: none;
-}
-
-.mode-label {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background-color: var(--secondary-color);
-    width: 50px;
-    height: 25px;
-    border-radius: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 2px;
-    z-index: 1001;
-}
-
-.toggle-ball {
-    width: 21px;
-    height: 21px;
-    background-color: var(--nav-text-color);
-    border-radius: 50%;
-    transition: transform 0.3s;
-}
-
-/* Move the toggle ball when checked */
-#mode-toggle:checked + .mode-label .toggle-ball {
-    transform: translateX(25px);
-}
-
-/* Apply Dark Mode Styles When Checked */
-#mode-toggle:checked ~ .content {
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --primary-color: #0d6efd;
-    --secondary-color: #adb5bd;
-    --card-bg-color: #1e1e1e;
-    --nav-bg-color: #212529;
-    --nav-text-color: #ffffff;
-}
-
-/* General Styles */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-.content {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004080;
+    padding: 10px 20px;
 }
 
-/* Header */
-.content header {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    text-align: center;
-    z-index: 1000;
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
 }
 
-.content header h1 {
-    margin: 0;
-}
-
-/* Navigation Menu */
-.content nav {
-    background-color: var(--nav-bg-color);
-    position: fixed;
-    top: 70px;
-    width: 100%;
-    z-index: 999;
-}
-
-.content nav ul {
+.navbar .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 10px 0;
 }
 
-.content nav li {
-    margin: 0 15px;
+.navbar .nav-links li {
+    margin-left: 20px;
 }
 
-.content nav .nav-link {
-    color: var(--nav-text-color);
+.navbar .nav-links a {
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    padding: 5px 0;
-}
-
-.content nav .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: var(--primary-color);
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s;
-}
-
-.content nav .nav-link:hover::after {
-    width: 100%;
-}
-
-/* Main Content */
-.content main {
-    padding: 120px 20px 60px 20px;
-}
-
-.content .content-section {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    text-align: center;
-}
-
-.content .content-section h2 {
-    margin-bottom: 20px;
-}
-
-.content .content-section p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.content .button {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
+    padding: 5px 10px;
     transition: background-color 0.3s;
 }
 
-.content .button:hover {
-    background-color: #0056b3;
+.navbar .nav-links a:hover {
+    background-color: #0066cc;
+    border-radius: 4px;
 }
 
-/* Card Container */
-.content .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+/* Sections */
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.content .card {
-    background-color: var(--card-bg-color);
-    padding: 20px;
-    border-radius: 5px;
-    width: 250px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+.home-section {
+    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
 }
 
-.content .card:hover {
-    transform: translateY(-5px);
+.home-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
 }
 
-.content .card h3 {
-    margin-bottom: 15px;
+.home-section p {
+    font-size: 1.2em;
 }
 
-.content .card p {
-    margin-bottom: 15px;
+.about-section, .syllabus-section, .assignments-section, .contact-section {
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 40px 20px;
+}
+
+.about-section h2,
+.syllabus-section h2,
+.assignments-section h2,
+.contact-section h2 {
+    margin-bottom: 20px;
+    color: #004080;
+}
+
+.syllabus-section ul,
+.assignments-section ol {
+    margin-left: 20px;
 }
 
 /* Footer */
-.content footer {
-    background-color: var(--nav-bg-color);
-    color: var(--nav-text-color);
+.footer {
+    background-color: #004080;
+    color: #fff;
     text-align: center;
-    padding: 15px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .content nav ul {
-        flex-direction: column;
-    }
-
-    .content nav li {
-        margin: 10px 0;
-    }
-
-    .content .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .content main {
-        padding-top: 160px;
-    }
+    padding: 20px;
 }
