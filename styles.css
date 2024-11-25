@@ -1,143 +1,149 @@
 :root {
-    --bg-color: #f4f4f9;
-    --text-color: #333;
+    /* Default Theme Variables (Theme 1) */
     --primary-color: #0073e6;
     --button-hover: #005bb5;
-}
-
-/* Define themes */
-[data-theme="theme1"] {
-    --primary-color: #0073e6;
     --bg-color: #f4f4f9;
     --text-color: #333;
-    --button-hover: #005bb5;
+    --quote-bg: #e6f7ff;
 }
 
 [data-theme="theme2"] {
     --primary-color: #e63946;
-    --bg-color: #fefae0;
-    --text-color: #1d3557;
-    --button-hover: #d62839;
+    --button-hover: #b71d2a;
+    --bg-color: #fbe8e9;
+    --text-color: #4a1a1e;
+    --quote-bg: #fde4e6;
 }
 
 [data-theme="theme3"] {
     --primary-color: #2a9d8f;
-    --bg-color: #fef9ef;
-    --text-color: #264653;
-    --button-hover: #21867a;
+    --button-hover: #207364;
+    --bg-color: #e9f8f4;
+    --text-color: #1c5246;
+    --quote-bg: #d3f1eb;
 }
 
 [data-theme="theme4"] {
-    --primary-color: #f4a261;
-    --bg-color: #ffebe5;
-    --text-color: #3a3a3a;
-    --button-hover: #e76f51;
+    --primary-color: #8d99ae;
+    --button-hover: #667180;
+    --bg-color: #f7f8fb;
+    --text-color: #3c4758;
+    --quote-bg: #e9edf3;
 }
 
 [data-theme="theme5"] {
-    --primary-color: #8a2be2;
-    --bg-color: #f7f0fa;
-    --text-color: #1b1b3a;
-    --button-hover: #6a0dad;
+    --primary-color: #ffba08;
+    --button-hover: #d99406;
+    --bg-color: #fffaf0;
+    --text-color: #3f2d12;
+    --quote-bg: #fff4d7;
 }
 
-/* Dark mode overlay */
 [data-dark-mode="true"] {
     --bg-color: #121212;
     --text-color: #e0e0e0;
+    --quote-bg: #1e1e1e;
+    --button-hover: #333333;
 }
 
-/* Apply variables */
+/* General Styles */
 body {
-    background-color: var(--bg-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
     color: var(--text-color);
-}
-
-button {
-    background-color: var(--primary-color);
-    color: white;
-
-    border: none;
-    padding: 0.7em 1.5em;
-    margin: 0.5em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-    width: 200px; /* Set a fixed width for all buttons */
-    text-align: center;
-    font-size: 1em; /* Ensures consistent text size */
-}
-
-button:hover {
-    background-color: var(--button-hover);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .header {
-    background: #0073e6;
+    text-align: center;
+    padding: 1em;
+    background: var(--primary-color);
     color: white;
-    padding: 1.5em;
+}
+
+h1 {
+    margin: 0.5em 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 2em auto;
     text-align: center;
-}
-
-.main-content {
-    padding: 2em;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.message {
-    background: #e3f2fd;
-    padding: 1.5em;
-    border-radius: 10px;
-    margin-bottom: 2em;
+    padding: 1em;
+    background: var(--quote-bg);
+    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.carousel {
-    text-align: center;
+    transition: background 0.3s ease;
 }
 
 .quote-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    overflow: hidden;
     position: relative;
-    height: 100px;
-    margin-bottom: 2em;
+    max-width: 600px;
+    margin: 2em auto;
+    height: 100px; /* Fixed height for smooth carousel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide non-visible quotes */
 }
 
 .quote {
-    min-width: 100%;
     display: none;
-    align-items: center;
-    justify-content: center;
-    font-style: italic;
     font-size: 1.2em;
+    font-style: italic;
+    color: var(--text-color);
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.buttons {
-    text-align: center;
+.quote-container .quote:first-child {
+    display: flex;
+}
+
+/* Button Styles */
+.theme-selection {
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 button {
-    background: #0073e6;
-    color: white;
+    padding: 10px 15px;
+    font-size: 1em;
     border: none;
-    padding: 0.7em 1.5em;
-    margin: 0.5em;
-    cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s;
-    width: 200px; /* Set a fixed width for all buttons */
-    text-align: center;
-    font-size: 1em; /* Ensures consistent text size */
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    transition: background 0.3s ease;
 }
 
-.footer {
-    background: #333;
-    color: white;
+button:hover {
+    background: var(--button-hover);
+}
+
+/* Footer */
+footer {
     text-align: center;
-    padding: 1em 0;
+    padding: 1em;
     margin-top: 2em;
+    background: var(--primary-color);
+    color: white;
+}
+
+.dark-mode-toggle {
+    margin-top: 1em;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: var(--text-color);
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+
+.dark-mode-toggle:hover {
+    color: var(--button-hover);
 }
