@@ -1,8 +1,8 @@
-/* CSS Variables */
+/* CSS Variables for Light and Dark Modes */
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
-    --primary-color: #007bff;
+    --primary-color: #0d6efd;
     --secondary-color: #6c757d;
     --card-bg-color: #f8f9fa;
     --nav-bg-color: #343a40;
@@ -19,30 +19,27 @@
     top: 15px;
     right: 15px;
     background-color: var(--secondary-color);
-    border-radius: 50px;
     width: 50px;
     height: 25px;
+    border-radius: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 5px;
+    padding: 2px;
     z-index: 1001;
 }
 
-.mode-label .sun,
-.mode-label .moon {
-    font-size: 18px;
-    color: var(--nav-text-color);
-    transition: opacity 0.3s;
+.toggle-ball {
+    width: 21px;
+    height: 21px;
+    background-color: var(--nav-text-color);
+    border-radius: 50%;
+    transition: transform 0.3s;
 }
 
-#mode-toggle:checked + .mode-label .sun {
-    opacity: 0;
-}
-
-#mode-toggle:not(:checked) + .mode-label .moon {
-    opacity: 0;
+/* Move the toggle ball when checked */
+#mode-toggle:checked + .mode-label .toggle-ball {
+    transform: translateX(25px);
 }
 
 /* Apply Dark Mode Styles When Checked */
@@ -56,7 +53,7 @@
     --nav-text-color: #ffffff;
 }
 
-/* Apply CSS Variables */
+/* General Styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -65,7 +62,6 @@ body {
 .content {
     background-color: var(--bg-color);
     color: var(--text-color);
-    /* Apply transition for smooth theme change */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -73,36 +69,153 @@ body {
 .content header {
     background-color: var(--primary-color);
     color: #ffffff;
-    /* Other header styles */
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+.content header h1 {
+    margin: 0;
 }
 
 /* Navigation Menu */
 .content nav {
     background-color: var(--nav-bg-color);
-    /* Other nav styles */
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    z-index: 999;
+}
+
+.content nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.content nav li {
+    margin: 0 15px;
 }
 
 .content nav .nav-link {
     color: var(--nav-text-color);
-    /* Other nav-link styles */
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+}
+
+.content nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--primary-color);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+.content nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Main Content */
+.content main {
+    padding: 120px 20px 60px 20px;
+}
+
+.content .content-section {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+.content .content-section h2 {
+    margin-bottom: 20px;
+}
+
+.content .content-section p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.content .button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.content .button:hover {
+    background-color: #0056b3;
+}
+
+/* Card Container */
+.content .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.content .card {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.content .card:hover {
+    transform: translateY(-5px);
+}
+
+.content .card h3 {
+    margin-bottom: 15px;
+}
+
+.content .card p {
+    margin-bottom: 15px;
 }
 
 /* Footer */
 .content footer {
     background-color: var(--nav-bg-color);
     color: var(--nav-text-color);
-    /* Other footer styles */
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Rest of your styles using the CSS variables */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content nav ul {
+        flex-direction: column;
+    }
 
-/* Example for buttons */
-.content .button {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    /* Other button styles */
-}
+    .content nav li {
+        margin: 10px 0;
+    }
 
-.content .button:hover {
-    background-color: #0056b3;
+    .content .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content main {
+        padding-top: 160px;
+    }
 }
