@@ -7,6 +7,15 @@
     --quote-bg: #e6f7ff;
 }
 
+[data-theme="theme1"] {
+    /* Default Theme Variables (Theme 1) */
+    --primary-color: #0073e6;
+    --button-hover: #005bb5;
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --quote-bg: #e6f7ff;
+}
+
 [data-theme="theme2"] {
     --primary-color: #e63946;
     --button-hover: #b71d2a;
