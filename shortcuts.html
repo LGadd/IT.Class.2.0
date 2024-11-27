@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Shortcuts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Keyboard Shortcuts</h1>
+        <nav>
+            <a href="index.html" class="back-link">← Back to Main Page</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="shortcuts">
+            <h2>Common Keyboard Shortcuts</h2>
+            <table class="shortcuts-table">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Shortcut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Copy</td>
+                        <td>Ctrl + C (Windows) / Cmd + C (Mac)</td>
+                    </tr>
+                    <tr>
+                        <td>Paste</td>
+                        <td>Ctrl + V (Windows) / Cmd + V (Mac)</td>
+                    </tr>
+                    <tr>
+                        <td>Cut</td>
+                        <td>Ctrl + X (Windows) / Cmd + X (Mac)</td>
+                    </tr>
+                    <tr>
+                        <td>Select All</td>
+                        <td>Ctrl + A (Windows) / Cmd + A (Mac)</td>
+                    </tr>
+                    <tr>
+                        <td>Undo</td>
+                        <td>Ctrl + Z (Windows) / Cmd + Z (Mac)</td>
+                    </tr>
+                    <tr>
+                        <td>Redo</td>
+                        <td>Ctrl + Y (Windows) / Cmd + Shift + Z (Mac)</td>
+                    </tr>
+                    <tr>
+                        <td>Save</td>
+                        <td>Ctrl + S (Windows) / Cmd + S (Mac)</td>
+                    </tr>
+                    <tr>
+                        <td>Find</td>
+                        <td>Ctrl + F (Windows) / Cmd + F (Mac)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="tips">
+            <h2>Tips for Efficient Work</h2>
+            <ul>
+                <li>Learn shortcuts for the software you use frequently—these can significantly save time.</li>
+                <li>Practice using shortcuts regularly until they become second nature.</li>
+                <li>Explore customization options in your tools to set your own shortcuts.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Good luck, and keep learning!</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
